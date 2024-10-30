@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Inicialize o banco de dados
         db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,

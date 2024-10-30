@@ -23,7 +23,7 @@ class CadastroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
 
-        // Inicializar o banco de dados
+
         db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,
@@ -47,10 +47,10 @@ class CadastroActivity : AppCompatActivity() {
 
                 lifecycleScope.launch {
                     withContext(Dispatchers.IO) {
-                        db.userDao().inserir(usuario) // Salvar no banco
+                        db.userDao().inserir(usuario)
                     }
                     Toast.makeText(this@CadastroActivity, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                    finish() // Fecha a tela de cadastro e retorna à anterior
+                    finish()
                 }
             } else {
                 Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
